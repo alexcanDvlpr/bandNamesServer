@@ -21,9 +21,12 @@
             console.log("Perdida la conexión con el server")
         })
 
-        socket.on('mensaje', (payload) => console.log(payload))
+        socket.on('flutter-test', (payload) => console.log(payload))
 
-        socket.emit('mensaje', { nombre: "Alex" });
+        socket.on('active-bands', (activeBands) => {
+            console.clear();
+            console.table(activeBands);
+        })
     </script>
 </body>
 </html>
